@@ -1,11 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import Card from "@/components/Card";
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
-      {/* <Footer></Footer> */}
+      <Card></Card>
+      {/* <Navbar></Navbar> */}
+      <Footer></Footer>
     </>
   );
 }

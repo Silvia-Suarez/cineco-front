@@ -19,8 +19,10 @@ export default function Card() {
         className=" h-full
        border w-80 shadow-md px-5 py-3 flex flex-col rounded-md"
       >
-        <img
-          src="/9f3f93604ed4-warner_barbie_cinecol_480x670.jpg"
+        <Image
+          src="/next.svg"
+          width={300}
+          height={300}
           alt="Imagen-Pelicula"
           className="mx-auto w-full border rounded-md"
         />
