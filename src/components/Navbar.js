@@ -1,9 +1,10 @@
+import SearchInput from "@/components/Inputs/SearchInput";
 export default function Card() {
   const Options = ({ active = false, children }) => {
     return (
       <>
         <div
-          className={`px-4 flex flex-col justify-center font-roboto text-white hover:bg-blue-secondary rounded-full text-sm ${
+          className={`px-4 flex flex-col cursor-pointer justify-center font-roboto text-white hover:bg-blue-secondary rounded-full text-sm ${
             active ? " bg-blue-secondary" : "bg-blue-principal"
           }`}
         >
@@ -25,6 +26,9 @@ export default function Card() {
               <Options>Pronto</Options>
               <Options>Cineco Alternativo</Options>
               <Options>Comidas</Options>
+            </div>
+            <div>
+              <SearchInput></SearchInput>
             </div>
           </div>
         </div>

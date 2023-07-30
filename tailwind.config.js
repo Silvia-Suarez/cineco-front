@@ -19,6 +19,12 @@ module.exports = {
         blue: {
           principal: "#1C508D",
           secondary: "#0076FF",
+          terciary: "#0D2748",
+          quaterny: "#06162F",
+        },
+        gray: {
+          principal: "#F6F6F6",
+          secondary: "#4F627B",
         },
       },
     },
