@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SearchInput from "@/components/Inputs/SearchInput";
 export default function Card() {
   const Options = ({ active = false, children }) => {
@@ -18,7 +19,7 @@ export default function Card() {
       <div className="absolute top-0 left-0 w-full h-24 bg-black">
         <div className="w-full flex h-full py-6 px-5">
           <div className="w-1/5">
-            <img src="/logo_cineco.svg" className="h-full py-2" />
+            <Image src="/logo_cineco.svg" className="h-full py-2" />
           </div>
           <div className="w-5/6 flex">
             <div className="flex py-1.5 space-x-3">
