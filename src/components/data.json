@@ -1,0 +1,25 @@
+{
+    "resources": [
+      {
+        "title": "Find me on Twitter",
+        "link": "https://twitter.com/kendalmintcode",
+        "imageUrl": "http://placekitten.com/300/300"
+      },
+      {
+        "title": "Welcome to Ark Labs",
+        "link": "https://ark-labs.co.uk",
+        "imageUrl": "http://placekitten.com/300/300"
+      },
+      {
+        "title": "Some sort of third title",
+        "link": "https://twitter.com/kendalmintcode",
+        "imageUrl": "http://placekitten.com/300/300"
+      },
+      {
+        "title": "A personal site perhaps?",
+        "link": "https://robkendal.co.uk",
+        "imageUrl": "http://placekitten.com/300/300"
+      }
+    ]
+  }
+  
