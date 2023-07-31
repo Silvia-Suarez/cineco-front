@@ -4,10 +4,13 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
-        <Script
-          src="https://kit.fontawesome.com/830378d14f.js"
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-...tuIntegridadAquí..."
           crossOrigin="anonymous"
-        ></Script>
+          referrerPolicy="no-referrer"
+        />
       </Head>
       <body>
         <Main />
