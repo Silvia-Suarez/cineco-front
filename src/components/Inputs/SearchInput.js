@@ -1,15 +1,12 @@
 export default function SearchInput() {
   return (
     <>
-      <div className="relative flex">
+      <div className="my-auto flex text-blue-principal bg-blue-fifth px-3 py-2 rounded-full">
         <input
-          type="search"
-          id="default-search"
-          className=""
-          placeholder="Search Mockups, Logos..."
-          required
+          className="font-roboto w-32 bg-blue-fifth text-xs hover:appearance-none placeholder-blue-extra font-normal outline-none"
+          placeholder="Buscar "
         />
-        <i class="fa-solid absolute top-0 left-0 fa-magnifying-glass text-2xl text-white"></i>
+        <i className="fas pl-3 fa-search text-xs"></i>
       </div>
     </>
   );

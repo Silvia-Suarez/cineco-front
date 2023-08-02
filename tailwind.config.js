@@ -21,11 +21,22 @@ module.exports = {
           secondary: "#0076FF",
           terciary: "#0D2748",
           quaterny: "#06162F",
+          fifth: "#DBE2F1",
+          extra: "#39669C",
         },
         gray: {
           principal: "#F6F6F6",
           secondary: "#4F627B",
         },
+      },
+      fontSize: {
+        "2xs": ["0.625rem", { lineHeight: "0.75rem" }],
+        "3xs": ["0.5rem", { lineHeight: "0.5rem" }],
+      },
+      height: {
+        100: "26rem",
+        114: "29rem",
+        128: "32rem",
       },
     },
   },

@@ -11,6 +11,17 @@ export default function Document() {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        {/*  Required Core Stylesheet */}
+        <link
+          rel="stylesheet"
+          href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+        ></link>
+
+        {/* Optional Theme Stylesheet  */}
+        <link
+          rel="stylesheet"
+          href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+        ></link>
       </Head>
       <body>
         <Main />
