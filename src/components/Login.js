@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { OptionsButton, PrincipalButton, SecondaryButton } from "./Buttons";
 export default function Login() {
   const [active, SetActive] = useState(false);
   const [hover, SetHover] = useState(false);
@@ -40,6 +40,19 @@ export default function Login() {
       {active && (
         <>
           <div className="absolute top-0 left-0 h-screen w-full bg-black opacity-60"></div>
+          <div className="w-96 h-80 absolute bg-blue-principal right-20 rounded-xl flex flex-col top-24 pb-6">
+            <div className="w-full h-1/3 flex flex-col">
+              <p className="my-auto text-white text-2xl font-semibold px-20 text-center">
+                Bienvenido a Cine Colombia
+              </p>
+            </div>
+            <div className="w-full h-2/3 bg-white">
+              <div className="flex h-full flex-col px-20 justify-center space-y-5">
+                <OptionsButton>Ingresar</OptionsButton>
+                <SecondaryButton>Registrarse</SecondaryButton>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </>

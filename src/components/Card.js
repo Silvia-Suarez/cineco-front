@@ -8,7 +8,9 @@ export default function Card({
   duration,
   gender,
   image,
+  others = false,
 }) {
+  console.log(image);
   const Label = ({ alert = false, children }) => {
     return (
       <>
@@ -25,36 +27,62 @@ export default function Card({
   };
   return (
     <>
-      <div
-        style={{ boxShadow: "0 0 10px rgba(0,0,0,.1)" }}
-        className=" h-full font-roboto capitalize w-80 px-5 py-4 flex flex-col rounded-md tracking-wide"
-      >
-        <Image
-          src={image}
-          width={300}
-          height={300}
-          alt="Imagen-Pelicula"
-          className="mx-auto w-full border rounded-md"
-        />
-        <div className=" h-1/3">
-          <p className=" text-lg pt-2 pb-1 text-blue-principal font-medium ">
-            {title}
-          </p>
-          <p className=" text-xs pb-1 font-medium">
-            Título en inglés: {o_title}
-          </p>
-          <div className=" text-xs pb-2 space-y-1">
-            <p>Estreno: {date}</p>
-            <p>Género: {gender}</p>
-          </div>
-          <div className="w-full text-xs flex flex-wrap h-28">
-            <Label alert={clasification.toLowerCase().includes("exclusiva")}>
-              {clasification}
-            </Label>
-            {duration && <Label>{duration} Min</Label>}
+      {others ? (
+        <div
+          style={{ boxShadow: "0 0 10px rgba(0,0,0,.1)" }}
+          className=" h-full font-roboto capitalize w-80 px-5 py-4 flex flex-col tracking-wide"
+        >
+          <Image
+            src={image}
+            width={300}
+            height={300}
+            alt="Imagen-Pelicula"
+            className="mx-auto w-full border rounded-md"
+          />
+          <div className=" h-1/3">
+            <p className=" text-xl pt-2 pb-1 font-noto font-medium ">{title}</p>
+            <div className=" text-xs font-medium pb-2 space-y-1">
+              <p>
+                Estreno <span className="font-normal">{date}</span>
+              </p>
+              <p>
+                Género <span className="font-normal">{gender}</span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div
+          style={{ boxShadow: "0 0 10px rgba(0,0,0,.1)" }}
+          className=" h-full font-roboto capitalize w-80 px-5 py-4 flex flex-col rounded-md tracking-wide"
+        >
+          <Image
+            src={image}
+            width={300}
+            height={300}
+            alt="Imagen-Pelicula"
+            className="mx-auto w-full border rounded-md"
+          />
+          <div className=" h-1/3">
+            <p className=" text-lg pt-2 pb-1 text-blue-principal font-medium ">
+              {title}
+            </p>
+            <p className=" text-xs pb-1 font-medium">
+              Título en inglés: {o_title}
+            </p>
+            <div className=" text-xs pb-2 space-y-1">
+              <p>Estreno: {date}</p>
+              <p>Género: {gender}</p>
+            </div>
+            <div className="w-full text-xs flex flex-wrap h-28">
+              <Label alert={clasification.toLowerCase().includes("exclusiva")}>
+                {clasification}
+              </Label>
+              {duration && <Label>{duration} Min</Label>}
+            </div>
+          </div>
+        </div>
+      )}{" "}
     </>
   );
 }

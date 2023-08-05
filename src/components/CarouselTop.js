@@ -6,11 +6,16 @@ const CarouselTop = () => {
     const glide = new Glide(".glide", {
       type: "carousel",
       perView: 5,
+      autoplay: 3000,
       gap: 0,
       focusAt: "center",
-      autoplay: 3000,
       animationDuration: 600,
       animationTimingFunc: "ease-in-out",
+      breakpoints: {
+        1216: {
+          perView: 3,
+        },
+      },
 
       // Agrega otras opciones de configuración según tus necesidades
     });
@@ -19,29 +24,32 @@ const CarouselTop = () => {
   }, []);
 
   return (
-    <div className="glide">
-      <div className="pt-10 glide__track" data-glide-el="track">
+    <div className="glide bg-gradient-to-b from-black to-white">
+      <div
+        className="py-10 glide__track bg-gradient from-black to-white  "
+        data-glide-el="track"
+      >
         <ul className="glide__slides text-center h-114">
-          <li className="glide__slide cuadros h-100 my-auto ">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros  h-100 my-auto ">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-600">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-500">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-400">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-300">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-200">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto  bg-blue-100">
-            <div className="h-full w-full border border-black rounded-3xl "></div>
+          <li className="glide__slide cuadros h-100 my-auto">
+            <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
         </ul>
       </div>

@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         roboto: ["Roboto"],
+        noto: ["Noto Serif"],
       },
       colors: {
         blue: {
@@ -34,6 +35,11 @@ module.exports = {
         "3xs": ["0.5rem", { lineHeight: "0.5rem" }],
       },
       height: {
+        100: "26rem",
+        114: "29rem",
+        128: "32rem",
+      },
+      width: {
         100: "26rem",
         114: "29rem",
         128: "32rem",
