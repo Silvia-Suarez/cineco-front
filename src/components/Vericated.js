@@ -1,23 +1,20 @@
-import React,{ useState, useContext} from "react";
-import { AccountContext } from "./Account";
+import React,{ useState} from "react";
+import UserPool from "@/pages/UserPool";
 
-const Login= () =>{
+const Signup= () =>{
 
     const [email, setemail] = useState("")
     const [password, setPassword] = useState("")
 
-    const {authenticate} = useContext(AccountContext)
-
     const onSubmit = (event) =>{
         event.preventDefault();
 
-        authenticate(email,password)
-         .then(data => {
-            console.log("Acceso Exitoso", data);
-         })
-         .catch(err => {
-            console.error("Error en el Login", err)
-         });
+        UserPool.confirmSignUp(email, password, [], null,(err,data)=>{
+            if(err){
+                console.log(err);
+            }
+            console.log(data);
+        });
     };
 
 
@@ -35,11 +32,11 @@ const Login= () =>{
                 onChange={(event)=> setPassword(event.target.value)}
                 ></input>
 
-                <button type="submit">Login</button>
+                <button type="submit">Signup</button>
 
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
