@@ -49,7 +49,7 @@ const CarouselTop = () => {
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
           <li
-            key={"image-carousel-top-3"}
+            key={"image-carousel-top-7"}
             className="glide__slide cuadros h-100 my-auto"
           >
             <div className="h-full w-full bg-white rounded-3xl "></div>

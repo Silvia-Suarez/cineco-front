@@ -36,7 +36,7 @@ export default function Card({
             src={image}
             width={300}
             height={300}
-            alt="Imagen-Pelicula"
+            alt="Imagen-Pelicula-Otros"
             className="mx-auto w-full border rounded-md"
           />
           <div className=" h-1/3">

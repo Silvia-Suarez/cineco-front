@@ -17,116 +17,117 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ movies_array }) {
-  // const movies = movies_array;
-  const movies = [
-    {
-      fields: {
-        id_pelicula: "1",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        duracion: 114,
-        clasificacion: "Para todo el Público",
-      },
-    },
-    {
-      fields: {
-        id_pelicula: "2",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        duracion: 114,
-        clasificacion: "Clasificación Por Confirmar",
-      },
-    },
-    {
-      fields: {
-        id_pelicula: "3",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        duracion: 114,
-        clasificacion: "Recomendada para Mayores de 12 años",
-      },
-    },
-    {
-      fields: {
-        id_pelicula: "4",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        clasificacion: "Exclusiva para Mayores de 15 años",
-      },
-    },
-    {
-      fields: {
-        id_pelicula: "5",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        duracion: 114,
-        clasificacion: "Para todo el Público",
-      },
-    },
-    {
-      fields: {
-        id_pelicula: "6",
-        titulo: "barbie",
-        titulo_original: "barbie",
-        portada: {
-          fields: {
-            file: {
-              fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
-            },
-          },
-        },
-        estreno: "20-Jul-2023",
-        genero: "comedia",
-        duracion: 114,
-        clasificacion: "Para todo el Público",
-      },
-    },
-  ];
+  const movies = movies_array;
+
+  // const movies = [
+  //   {
+  //     fields: {
+  //       id_pelicula: "1",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       duracion: 114,
+  //       clasificacion: "Para todo el Público",
+  //     },
+  //   },
+  //   {
+  //     fields: {
+  //       id_pelicula: "2",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       duracion: 114,
+  //       clasificacion: "Clasificación Por Confirmar",
+  //     },
+  //   },
+  //   {
+  //     fields: {
+  //       id_pelicula: "3",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       duracion: 114,
+  //       clasificacion: "Recomendada para Mayores de 12 años",
+  //     },
+  //   },
+  //   {
+  //     fields: {
+  //       id_pelicula: "4",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       clasificacion: "Exclusiva para Mayores de 15 años",
+  //     },
+  //   },
+  //   {
+  //     fields: {
+  //       id_pelicula: "5",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       duracion: 114,
+  //       clasificacion: "Para todo el Público",
+  //     },
+  //   },
+  //   {
+  //     fields: {
+  //       id_pelicula: "6",
+  //       titulo: "barbie",
+  //       titulo_original: "barbie",
+  //       portada: {
+  //         fields: {
+  //           file: {
+  //             fileName: "9f3f93604ed4-warner_barbie_cinecol_480x670.jpg",
+  //           },
+  //         },
+  //       },
+  //       estreno: "20-Jul-2023",
+  //       genero: "comedia",
+  //       duracion: 114,
+  //       clasificacion: "Para todo el Público",
+  //     },
+  //   },
+  // ];
 
   const others = [
     {
@@ -186,7 +187,7 @@ export default function Home({ movies_array }) {
                       title={movie?.fields?.titulo}
                       o_title={movie?.fields?.titulo_original}
                       image={
-                        "/" + movie?.fields?.portada?.fields?.file?.fileName
+                        "https:" + movie?.fields?.portada?.fields?.file?.url
                       }
                       date={movie?.fields?.estreno}
                       gender={movie?.fields?.genero}
@@ -204,16 +205,18 @@ export default function Home({ movies_array }) {
               <p className="text-lg font-roboto font-medium pb-10">PRONTO</p>
               <div className="grid grid-cols-3 xl:grid-cols-4 gap-y-5 xl:gap-x-6">
                 {movies.map((movie) => (
-                  <div key={movie.fields.id}>
+                  <div key={movie?.fields?.id + "_otros"}>
                     <Card
-                      id={movie.fields.id}
-                      title={movie.fields.titulo}
-                      o_title={movie.fields.titulo_original}
-                      image={movie.fields.portada}
-                      date={movie.fields.estreno}
-                      gender={movie.fields.genero}
-                      duration={movie.fields.duracion}
-                      clasification={movie.fields.clasificacion}
+                      id={movie?.fields?.id}
+                      title={movie?.fields?.titulo}
+                      o_title={movie?.fields?.titulo_original}
+                      image={
+                        "https:" + movie?.fields?.portada?.fields?.file?.url
+                      }
+                      date={movie?.fields?.estreno}
+                      gender={movie?.fields?.genero}
+                      duration={movie?.fields?.duracion}
+                      clasification={movie?.fields?.clasificacion}
                     ></Card>
                   </div>
                 ))}

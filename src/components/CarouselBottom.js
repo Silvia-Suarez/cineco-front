@@ -35,6 +35,7 @@ export default function CarouselBottom() {
             <ul className="glide__slides">
               <li className=" glide__slide">
                 <Image
+                  alt="Imagen-carusel-bot"
                   height={300}
                   width={300}
                   src="/7f650afc63b9-icono-cine-colombia.png"
@@ -43,6 +44,7 @@ export default function CarouselBottom() {
               </li>
               <li className="glide__slide">
                 <Image
+                  alt="Imagen-carusel-bot"
                   height={300}
                   width={300}
                   src="/23127617afa8-miercoles-a-mitad-de-precio.jpg"
@@ -51,6 +53,7 @@ export default function CarouselBottom() {
               </li>
               <li className="glide__slide">
                 <Image
+                  alt="Imagen-carusel-bot"
                   height={300}
                   width={300}
                   src="/Datos Usuarios Cineco.png"
@@ -59,6 +62,7 @@ export default function CarouselBottom() {
               </li>
               <li className="glide__slide">
                 <Image
+                  alt="Imagen-carusel-bot"
                   height={300}
                   width={300}
                   src="/TARJETA CINECO GRAL.jpg"
