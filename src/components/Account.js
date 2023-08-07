@@ -22,6 +22,27 @@ const Account = ( props ) =>{
             }
         });
     }
+    const verificated = async(Username,Code) => {
+        return await new Promise((resolve, reject) =>{
+            const user = new CognitoUser({Username,Pool})
+            // const params = {
+            // Pool,
+            // Username,
+            // Code
+            // };
+
+          user.confirmRegistration(Code,true, (err, data) => {
+            if (err) {
+              console.log('Error al verificar el código de confirmación:', err)
+              reject(err);
+            } else {
+                resolve(data)
+                console.log('Cuenta verificada correctamente:', data);
+            }
+          });
+        });
+
+    }
 
 
     const authenticate = async(Username, Password) =>{
@@ -54,7 +75,7 @@ const Account = ( props ) =>{
         }
     }
     return(
-        <AccountContext.Provider value={{authenticate, getSession, logout}}>
+        <AccountContext.Provider value={{authenticate, getSession, logout, verificated}}>
             {props.children}
         </AccountContext.Provider>
     )

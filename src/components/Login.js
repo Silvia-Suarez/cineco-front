@@ -24,8 +24,8 @@ const Login= () =>{
     return(
         <div>
             <form onSubmit={onSubmit}>
-                <label htmlFor="email">Email</label>
-                <input
+                <label htmlFor="email" >Email</label>
+                <input  
                 value={email}
                 onChange={(event)=> setemail(event.target.value)}
                 ></input>

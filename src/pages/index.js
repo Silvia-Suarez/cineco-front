@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Card from "@/components/Card";
 import Signup from "@/components/Signup";
 import Login from "@/components/Login";
+import Confirmed from "@/components/Confirmed";
 import { Account } from "@/components/Account";
 import StatusSession from "@/components/StatusSession";
 
@@ -18,6 +19,8 @@ export default function Home() {
         <Signup></Signup>
         <h1 className=" text-6xl ">Login</h1>
         <Login></Login>
+        <h1 className=" text-6xl ">Verificar Cuenta</h1>
+        <Confirmed></Confirmed>
       </Account>
     </>
   );

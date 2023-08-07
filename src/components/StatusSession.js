@@ -10,11 +10,11 @@ const StatusSession = () =>{
     useEffect(() => {
       getSession()
         .then(session =>{
-            console.log("Session: ",session);
+            // console.log("Session: ",session);
             setstatus(true);
         })
         .catch(err => {
-            console.error("Session Error", err)
+            // console.log("Session Error", err)
          });
     }, []);
 
