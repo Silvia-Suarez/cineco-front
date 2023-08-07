@@ -1,17 +1,16 @@
 import React, { useState, useContext } from "react";
-import { AccountContext } from "./Account";
 import MainStructure from "@/components/MainStructure";
 import Input from "@/components/Inputs/Input";
 import PasswordInput from "@/components/Inputs/PasswordInput";
 import Signup from "@/components/Signup";
 import Login from "@/components/Login";
 import Confirmed from "@/components/Confirmed";
-import { Account } from "@/components/Account";
+import { Account, AccountContext } from "@/components/Account";
 import StatusSession from "@/components/StatusSession";
 
-export default function login({}) {
-  const [email, setemail] = useState("");
-  const [password, setPassword] = useState("");
+export default function LoginPage({}) {
+  const [email, SetEmail] = useState("");
+  const [password, SetPassword] = useState("");
 
   const { authenticate } = useContext(AccountContext);
 
@@ -51,12 +50,12 @@ export default function login({}) {
                 <label htmlFor="email">Email</label>
                 <input
                   value={email}
-                  onChange={(event) => setemail(event.target.value)}
+                  onChange={(event) => SetEmail(event.target.value)}
                 ></input>
                 <label htmlFor="password">Contraseña</label>
                 <input
                   value={password}
-                  onChange={(event) => setPassword(event.target.value)}
+                  onChange={(event) => SetPassword(event.target.value)}
                 ></input>
 
                 <button type="submit">Login</button>
