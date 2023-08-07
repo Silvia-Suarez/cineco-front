@@ -10,7 +10,6 @@ export default function Card({
   image,
   others = false,
 }) {
-  console.log(image);
   const Label = ({ alert = false, children }) => {
     return (
       <>
@@ -25,12 +24,13 @@ export default function Card({
       </>
     );
   };
+
   return (
     <>
       {others ? (
         <div
           style={{ boxShadow: "0 0 10px rgba(0,0,0,.1)" }}
-          className=" h-full font-roboto capitalize w-80 px-5 py-4 flex flex-col tracking-wide"
+          className=" h-full font-roboto capitalize xl:w-80 w-64 px-5 py-4 flex flex-col tracking-wide"
         >
           <Image
             src={image}

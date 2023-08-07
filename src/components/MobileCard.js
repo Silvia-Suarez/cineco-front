@@ -10,7 +10,6 @@ export default function MobileCard({
   image,
   others = false,
 }) {
-  console.log(image);
   const Label = ({ alert = false, children }) => {
     return (
       <>

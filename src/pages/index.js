@@ -1,18 +1,10 @@
 import client from "../../contentful";
-import { useEffect, useState } from "react";
+import MainStructure from "@/components/MainStructure";
 import Card from "@/components/Card";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import AltCard from "@/components/AltCard";
-import CarouselTop from "@/components/CarouselTop";
 import MobileCard from "@/components/MobileCard";
 import SearchInput from "@/components/Inputs/SearchInput";
-import CarouselControlsInside from "@/components/CarouselBottom";
-import {
-  PrincipalButton,
-  SecondaryButton,
-  OptionsButton,
-} from "@/components/Buttons";
+import { PrincipalButton, OptionsButton } from "@/components/Buttons";
 
 export async function getStaticProps() {
   const response = await client.getEntries({
@@ -26,8 +18,6 @@ export async function getStaticProps() {
 }
 export default function Home({ movies_array }) {
   // const movies = movies_array;
-  // console.log(movies);
-  useEffect;
   const movies = [
     {
       fields: {
@@ -137,6 +127,7 @@ export default function Home({ movies_array }) {
       },
     },
   ];
+
   const others = [
     {
       id_pelicula: "1",
@@ -180,20 +171,17 @@ export default function Home({ movies_array }) {
 
   return (
     <>
-      <Navbar></Navbar>
-      <div className="w-full lg:block hidden overflow-auto pt-24 h-screen">
-        <section>
-          <CarouselTop></CarouselTop>
-          <div className=" px-14 py-16">
+      <MainStructure>
+        <section className="hidden lg:block">
+          <div className="px-6 xl:px-14 py-16">
             <div>
               <p className="text-lg font-roboto font-medium pb-10">
                 EN CARTELERA
               </p>
-              <div className=" grid grid-cols-4 gap-y-5 gap-x-6">
+              <div className="grid grid-cols-3 xl:grid-cols-4 gap-y-5 xl:gap-x-6">
                 {movies.map((movie) => (
-                  <>
+                  <div key={movie?.fields?.id + "_pelicula"}>
                     <Card
-                      key={movie?.fields?.id + "_pelicula"}
                       id={movie?.fields?.id}
                       title={movie?.fields?.titulo}
                       o_title={movie?.fields?.titulo_original}
@@ -205,7 +193,7 @@ export default function Home({ movies_array }) {
                       duration={movie?.fields?.duracion}
                       clasification={movie?.fields?.clasificacion}
                     ></Card>
-                  </>
+                  </div>
                 ))}
               </div>
               <div className="ml-auto w-max pt-14 pb-24">
@@ -214,19 +202,20 @@ export default function Home({ movies_array }) {
             </div>
             <div>
               <p className="text-lg font-roboto font-medium pb-10">PRONTO</p>
-              <div className=" grid grid-cols-4 gap-y-5 gap-x-6">
+              <div className="grid grid-cols-3 xl:grid-cols-4 gap-y-5 xl:gap-x-6">
                 {movies.map((movie) => (
-                  <Card
-                    key={movie.fields.id}
-                    id={movie.fields.id}
-                    title={movie.fields.titulo}
-                    o_title={movie.fields.titulo_original}
-                    image={movie.fields.portada}
-                    date={movie.fields.estreno}
-                    gender={movie.fields.genero}
-                    duration={movie.fields.duracion}
-                    clasification={movie.fields.clasificacion}
-                  ></Card>
+                  <div key={movie.fields.id}>
+                    <Card
+                      id={movie.fields.id}
+                      title={movie.fields.titulo}
+                      o_title={movie.fields.titulo_original}
+                      image={movie.fields.portada}
+                      date={movie.fields.estreno}
+                      gender={movie.fields.genero}
+                      duration={movie.fields.duracion}
+                      clasification={movie.fields.clasificacion}
+                    ></Card>
+                  </div>
                 ))}
               </div>
               <div className="ml-auto w-max py-8">
@@ -234,25 +223,26 @@ export default function Home({ movies_array }) {
               </div>
             </div>
           </div>
-          <div className=" bg-gray-principal tracking-wide text-xl font-noto px-14 py-16">
+          <div className=" bg-gray-principal tracking-wide text-xl font-noto px-6 xl:px-14 py-16">
             CINECO ALTERNATIVO
             <div className="flex space-x-6">
               <div className="w-1/2">
                 <p className=" pt-10 pb-5">Otros</p>
                 <div className=" grid grid-cols-2 gap-y-5 gap-x-6">
                   {others.map((movie) => (
-                    <Card
-                      key={movie.id_pelicula + "_otros"}
-                      id={movie.id_pelicula}
-                      others={true}
-                      title={movie.titulo}
-                      o_title={movie.titulo_original}
-                      image={movie.portada}
-                      date={movie.estreno}
-                      gender={movie.genero}
-                      duration={movie.duracion}
-                      clasification={movie.clasificacion}
-                    ></Card>
+                    <div key={movie.id_pelicula + "_otros"}>
+                      <Card
+                        id={movie.id_pelicula}
+                        others={true}
+                        title={movie.titulo}
+                        o_title={movie.titulo_original}
+                        image={movie.portada}
+                        date={movie.estreno}
+                        gender={movie.genero}
+                        duration={movie.duracion}
+                        clasification={movie.clasificacion}
+                      ></Card>
+                    </div>
                   ))}
                 </div>
                 <div className="ml-auto w-max py-8">
@@ -262,11 +252,12 @@ export default function Home({ movies_array }) {
               <div className="w-1/2">
                 <p className=" pb-5 pt-10">Opera</p>
                 {ophera.map((movie) => (
-                  <AltCard
-                    key={movie.id_pelicula + "_opera"}
-                    id={movie.id_pelicula}
-                    image={movie.portada}
-                  ></AltCard>
+                  <div key={movie.id_pelicula + "_opera"}>
+                    <AltCard
+                      id={movie.id_pelicula}
+                      image={movie.portada}
+                    ></AltCard>
+                  </div>
                 ))}
               </div>
             </div>
@@ -274,46 +265,41 @@ export default function Home({ movies_array }) {
               <div className="w-1/2">
                 <p className="text-lg font-medium pb-10">Ballet</p>
                 {ballet.map((movie) => (
-                  <AltCard
-                    key={movie.id_pelicula + "_ballet"}
-                    id={movie.id_pelicula}
-                    image={movie.portada}
-                  ></AltCard>
+                  <div key={movie.id_pelicula + "_ballet"}>
+                    <AltCard
+                      id={movie.id_pelicula}
+                      image={movie.portada}
+                    ></AltCard>
+                  </div>
                 ))}
               </div>
               <div className="w-1/2">
                 <p className="text-lg font-medium pb-10">Teatro</p>
                 {theatre.map((movie) => (
-                  <AltCard
-                    key={movie.id_pelicula + "_teatro"}
-                    id={movie.id_pelicula}
-                    image={movie.portada}
-                  ></AltCard>
+                  <div key={movie.id_pelicula + "_teatro"}>
+                    <AltCard
+                      id={movie.id_pelicula}
+                      image={movie.portada}
+                    ></AltCard>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className="bg-white py-20">
-            <CarouselControlsInside></CarouselControlsInside>
-          </div>
         </section>
-        <Footer></Footer>
-      </div>
-      <div className=" bg-gradient-to-r from-black to-white overflow-auto w-full lg:hidden pt-16 h-screen">
-        <div className="bg-white w-full rounded-t-3xl flex-col flex ">
-          <section className="px-9 py-11 space-y-9">
+        <section className="lg:hidden w-full flex-col flex ">
+          <div className="px-9 py-11 space-y-9">
             <SearchInput></SearchInput>
             <div className="flex justify-center w-full h-8 space-x-2">
               <OptionsButton>Cartelera</OptionsButton>
               <OptionsButton>Pronto</OptionsButton>
               <OptionsButton>Cineco Alternativo</OptionsButton>
             </div>
-          </section>
-          <section className="w-full h-full flex flex-col">
+          </div>
+          <div className="w-full h-full flex flex-col">
             {movies.map((movie) => (
-              <>
+              <div key={movie?.fields?.id + "_pelicula"}>
                 <MobileCard
-                  key={movie?.fields?.id + "_pelicula"}
                   id={movie?.fields?.id}
                   title={movie?.fields?.titulo}
                   o_title={movie?.fields?.titulo_original}
@@ -323,15 +309,11 @@ export default function Home({ movies_array }) {
                   duration={movie?.fields?.duracion}
                   clasification={movie?.fields?.clasificacion}
                 ></MobileCard>
-              </>
+              </div>
             ))}
-            <div className="bg-white py-20">
-              <CarouselControlsInside></CarouselControlsInside>
-            </div>
-          </section>
-          <Footer></Footer>
-        </div>
-      </div>
+          </div>
+        </section>
+      </MainStructure>
     </>
   );
 }

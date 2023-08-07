@@ -2,7 +2,9 @@ import Image from "next/image";
 import SearchInput from "@/components/Inputs/SearchInput";
 import Login from "@/components/Login";
 import { OptionsButton } from "./Buttons";
+import { useRouter } from "next/router";
 export default function Navbar() {
+  const router = useRouter();
   return (
     <>
       <div className=" lg:absolute lg:block hidden z-50 top-0 left-0 w-full h-24 bg-black">
@@ -12,7 +14,8 @@ export default function Navbar() {
               src="/logo_cineco.svg"
               width={200}
               height={100}
-              className=" h-full xl:ml-auto py-2"
+              onClick={() => router.push("/")}
+              className="cursor-pointer h-full xl:ml-auto py-2"
               alt="CineCol-logo"
             />
           </div>
@@ -39,6 +42,7 @@ export default function Navbar() {
             src="/logo_cineco.svg"
             width={200}
             height={200}
+            onClick={() => router.push("/")}
             className="mx-auto h-7"
             alt="CineCol-logo"
           />

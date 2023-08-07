@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { OptionsButton, PrincipalButton, SecondaryButton } from "./Buttons";
+import { useRouter } from "next/router";
 export default function Login() {
   const [active, SetActive] = useState(false);
   const [hover, SetHover] = useState(false);
-
+  const router = useRouter();
+  function changePage() {
+    router.push("/login");
+  }
   return (
     <>
       <div
@@ -16,7 +20,7 @@ export default function Login() {
           <div
             className={`rounded-l-full text-center ${
               hover ? "bg-blue-secondary" : "bg-blue-principal"
-            } flex flex-col h-5 w-6 justify-center `}
+            } flex flex-col h-5 w-6 cursor-pointer justify-center `}
           >
             {active ? (
               <i className="fas fa-chevron-up text-2xs"></i>
@@ -27,7 +31,7 @@ export default function Login() {
         </div>
         <div className="flex flex-col -ml-1 justify-center">
           <div
-            className={`rounded-full p-1.5 ${
+            className={`rounded-full cursor-pointer p-1.5 ${
               hover ? "bg-blue-secondary" : "bg-blue-principal"
             } `}
           >
@@ -39,8 +43,11 @@ export default function Login() {
       </div>
       {active && (
         <>
-          <div className="absolute top-0 left-0 h-screen w-full bg-black opacity-60"></div>
-          <div className="w-96 h-80 absolute bg-blue-principal right-20 rounded-xl flex flex-col top-24 pb-6">
+          <div
+            onClick={() => SetActive(false)}
+            className="absolute top-0 left-0 h-screen w-full bg-black opacity-60"
+          ></div>
+          <div className="sm:w-96 sm:h-80 w-80 h-72 absolute bg-blue-principal lg:right-24 sm:right-14 md:right-10 right-8 rounded-xl flex flex-col lg:top-20 md:top-14 sm:top-12 top-14 pb-6">
             <div className="w-full h-1/3 flex flex-col">
               <p className="my-auto text-white text-2xl font-semibold px-20 text-center">
                 Bienvenido a Cine Colombia
@@ -48,8 +55,10 @@ export default function Login() {
             </div>
             <div className="w-full h-2/3 bg-white">
               <div className="flex h-full flex-col px-20 justify-center space-y-5">
-                <OptionsButton>Ingresar</OptionsButton>
-                <SecondaryButton>Registrarse</SecondaryButton>
+                <OptionsButton action={changePage}>Ingresar</OptionsButton>
+                <SecondaryButton action={changePage}>
+                  Registrarse
+                </SecondaryButton>
               </div>
             </div>
           </div>

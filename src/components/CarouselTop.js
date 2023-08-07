@@ -24,31 +24,52 @@ const CarouselTop = () => {
   }, []);
 
   return (
-    <div className="glide bg-gradient-to-b from-black to-white">
+    <div className="glide lg:block hidden bg-gradient-to-b from-black to-white">
       <div
         className="py-10 glide__track bg-gradient from-black to-white  "
         data-glide-el="track"
       >
         <ul className="glide__slides text-center h-114">
-          <li className="glide__slide cuadros  h-100 my-auto ">
+          <li
+            key={"image-carousel-top-1"}
+            className="glide__slide cuadros  h-100 my-auto "
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-2"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-3"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-3"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-4"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-5"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
-          <li className="glide__slide cuadros h-100 my-auto">
+          <li
+            key={"image-carousel-top-6"}
+            className="glide__slide cuadros h-100 my-auto"
+          >
             <div className="h-full w-full bg-white rounded-3xl "></div>
           </li>
         </ul>
