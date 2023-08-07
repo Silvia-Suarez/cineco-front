@@ -27,10 +27,11 @@ const OptionsButton = ({ active = false, action, children }) => {
   );
 };
 
-const SecondaryButton = ({ action, children }) => {
+const SecondaryButton = ({ type, action, children }) => {
   return (
     <>
       <button
+        type={type}
         onClick={() => action()}
         className="flex cursor-pointer justify-center rounded-full py-3 px-6 font-roboto text-center text-sm font-medium tracking-wide bg-transparent border border-blue-principal text-blue-principal hover:text-white hover:bg-blue-principal"
       >
